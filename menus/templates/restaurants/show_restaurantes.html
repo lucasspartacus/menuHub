@@ -1,0 +1,14 @@
+{% extends "application,html" %}
+{% block conten %}
+    <h1>Restaurantes no MenuHub</h1>
+    <a href="new/">Incluir</a>
+    {% if restaurantes %}
+        {% for restaurant in restaurantes %}
+            <p>{{restaurant.name}}</p>
+            <a href='menus/{{restaurant.id}}'>Menu</a>
+            <a href='edit/{{restaurant.id}}'>Edit</a>
+            <a href='delete/{{restaurant.id}}'>Delete</a>
+    {% else %}
+        <p>Nenum restaurante no MenuHub</p>
+    {% endif %}
+{% endblock conten %}
